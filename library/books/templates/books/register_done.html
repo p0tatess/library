@@ -1,0 +1,8 @@
+{% extends 'books/base.html' %}
+
+{% block title %} Добро пожаловать {% endblock %}
+
+{% block content %}
+    <h1>Добро пожаловать{{ new_user.first_name }}!</h1>
+    <p>Ваш профиль создан</p>
+{% endblock %}

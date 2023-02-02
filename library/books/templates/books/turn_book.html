@@ -1,0 +1,20 @@
+{% extends 'books/base.html' %}
+{% load spisok %}
+
+
+{% block title %}Книгиа{% endblock %}
+
+{% block content %}
+    <h1>Выбор книги</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Сдать книгу">
+</form>
+    Книги которые у вас на руках:
+    {% for i in have_books %}
+        {% cal_str i %},
+    {% endfor %}
+
+{% endblock %}
