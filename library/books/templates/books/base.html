@@ -6,12 +6,15 @@
 </head>
 <body>
  <a href="{% url 'base' %}">На главную</a>
- <a href="{% url 'register' %}">Регистрация</a>
- <a href="{% url 'login' %}">Авторизация</a>
+
     {% if request.user.is_authenticated %}
          <a href="{% url 'books' %}">Взять книги</a>
          <a href="{% url 'turn_books' %}">Сдать книги</a>
+         <a href="{% url 'logout' %}">Выход</a>
         Вы в профиле: {{user}}
+    {% else %}
+         <a href="{% url 'register' %}">Регистрация</a>
+        <a href="{% url 'login' %}">Авторизация</a>
     {% endif %}
 
     {% block content %}
